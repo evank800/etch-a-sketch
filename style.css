@@ -1,6 +1,9 @@
+
 body{
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 #container{
@@ -23,4 +26,8 @@ canvas{
 div div{
     display:flex;
     flex-direction: column;
+}
+
+#grid-size{
+    margin-top: 50px;
 }
