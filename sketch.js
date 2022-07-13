@@ -15,8 +15,24 @@ function createGrid(boxNum){
             box.style.width = `${960/boxNum}px`;
             column.appendChild(box);
         }
+        
         container.appendChild(column);
     }
 }
 
-createGrid(16)
+
+function toSketch(){
+
+    const hovers = document.querySelectorAll('canvas')
+    const hover = document.querySelector('canvas');
+    /* hovers.forEach(hover => hover.addEventListener("mouseover", () => {hover.style.background = 'red'})); */
+    hovers.forEach(hover => hover.addEventListener("mouseover", function(e){
+        hover.style.background = 'black';
+    }))
+}
+
+
+createGrid(100)
+toSketch()
+
+
