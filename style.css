@@ -16,6 +16,9 @@ canvas{
     box-sizing: border-box; /* the size includes the borders*/
     border: 1px solid rgb(236, 235, 235);
 }
+/* canvas:hover{
+    background-color: red;
+} */
 
 div div{
     display:flex;
