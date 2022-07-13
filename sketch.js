@@ -1,18 +1,21 @@
 const container = document.querySelector('#container');
 
 //boxNum would be given as an input
-let boxNum;
 
 //pixNum is the total pixel(here: 960px) / boxNum 
-let pixNum = 960 / boxNum;
 
-function createGrid(number){
-    for (let i = 0; i < number; i++){
-        const box = document.createElement('canvas');
-        box.setAttribute('class', 'box'); // sets the class name of each grid as 'boxes'
-        document.getElementsByClassName('box').style.height = `${960/number}px`;
-        document.getElementsByClassName('box').style.width = `${960/number}px`;
-        container.appendChild(box)
+function createGrid(boxNum){
+
+    for (let i = 0; i < boxNum; i++){ // column
+
+        const column = document.createElement('div'); //creates a column of boxes
+        for(let j = 0; j < boxNum; j++){ // row
+            const box = document.createElement('canvas');
+            box.style.height = `${960/boxNum}px`; //height of each individual box
+            box.style.width = `${960/boxNum}px`;
+            column.appendChild(box);
+        }
+        container.appendChild(column);
     }
 }
 
