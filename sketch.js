@@ -23,9 +23,10 @@ function createGrid(boxNum){
 
 function toSketch(){
 
-    const hovers = document.querySelectorAll('canvas')
-    const hover = document.querySelector('canvas');
+    const hovers = document.querySelectorAll('canvas') // an "array" of elements
+    const hover = document.querySelector('canvas'); // an element
     /* hovers.forEach(hover => hover.addEventListener("mouseover", () => {hover.style.background = 'red'})); */
+    //This is probably better(forEach function to go through the "array" and add eventlistener to each element)
     hovers.forEach(hover => hover.addEventListener("mouseover", function(e){
         hover.style.background = 'black';
     }))
