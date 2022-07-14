@@ -1,11 +1,13 @@
+// empty grid at first 
+// type in the size
+// new grid drawn
+//then everytime the button is clicked and the a new grid is given, the page reloads
+
 const container = document.querySelector('#container');
 
-//pixNum is the total pixel(here: 960px) / boxNum 
-
+//creates a new grid
 function createGrid(boxNum){
-
     for (let i = 0; i < boxNum; i++){ // column
-
         const column = document.createElement('div'); //creates a column of boxes
         for(let j = 0; j < boxNum; j++){ // row
             const box = document.createElement('canvas');
@@ -18,7 +20,7 @@ function createGrid(boxNum){
     }
 }
 
-
+//Marks the canvases with colour where mouse hovered over 
 function toSketch(){
     const hovers = document.querySelectorAll('canvas') // an "array" of elements
     const hover = document.querySelector('canvas'); // an element
@@ -31,12 +33,7 @@ function toSketch(){
     }))
 }
 
-/* function chooseGrid(){
-    const button = document.querySelector('#grid-size');
-    button.addEventListener("click", () => {let gridSize = prompt("Enter the grid size(size x size): ");
-        return gridSize});
-} */
-
+//removes the old grid
 function removeGrid(){
     while (container.firstChild){
         container.removeChild(container.firstChild);
@@ -44,7 +41,6 @@ function removeGrid(){
 }
 
 //Allows the grid to refresh and change to the given pixels
-
 function refreshGrid(){
     const button = document.querySelector('#grid-size');
     button.addEventListener("click", function(e){
@@ -54,8 +50,4 @@ function refreshGrid(){
         toSketch()});
 }
 
-refreshGrid()
-// empty grid at first 
-// type in the size
-// new grid drawn
-//then everytime the button is clicked and the a new grid is given, the page reloads
+refreshGrid();
