@@ -37,29 +37,25 @@ function toSketch(){
         return gridSize});
 } */
 
-
-
-const button = document.querySelector('#grid-size');
-
-button.addEventListener("click", function(e){
-    let gridSize = Number(prompt("Enter the grid size(size x size): "));
-    removeGrid();
-    createGrid(gridSize);
-    toSketch()});
-
-
 function removeGrid(){
     while (container.firstChild){
         container.removeChild(container.firstChild);
     }
 }
 
+//Allows the grid to refresh and change to the given pixels
 
-//empty grid at first 
+function refreshGrid(){
+    const button = document.querySelector('#grid-size');
+    button.addEventListener("click", function(e){
+        let gridSize = Number(prompt("size x size (max. 200) \nEnter the frid size"));
+        removeGrid();
+        createGrid(gridSize);
+        toSketch()});
+}
+
+refreshGrid()
+// empty grid at first 
 // type in the size
-// the page reloads and the new grid pops out(maybe the page doesn't reload just a new grid is drawn)
+// new grid drawn
 //then everytime the button is clicked and the a new grid is given, the page reloads
-
-/* createGrid(10);
-toSketch();
-chooseGrid(); */
