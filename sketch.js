@@ -44,10 +44,13 @@ function removeGrid(){
 function refreshGrid(){
     const button = document.querySelector('#grid-size');
     button.addEventListener("click", function(e){
-        let gridSize = Number(prompt("size x size (max. 200) \nEnter the frid size"));
+        let gridSize = Number(prompt("size x size (max. 200) \nEnter the grid size"));
         removeGrid();
         createGrid(gridSize);
         toSketch()});
 }
 
 refreshGrid();
+
+
+//additional: - Add css, mouse click and hover?
