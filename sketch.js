@@ -20,7 +20,6 @@ function createGrid(boxNum){
 
 
 function toSketch(){
-
     const hovers = document.querySelectorAll('canvas') // an "array" of elements
     const hover = document.querySelector('canvas'); // an element
 
@@ -38,18 +37,15 @@ function toSketch(){
         return gridSize});
 } */
 
-function chooseGrid(){
-    const button = document.querySelector('#grid-size');
-    button.addEventListener("click", () => {let gridSize = Number(prompt("Enter the grid size(size x size): "));
-        return gridSize})
-    
-}
 
 
-//empty grid at first 
-// type in the size
-// the page reloads and the new grid pops out(maybe the page doesn't reload just a new grid is drawn)
-//then everytime the button is clicked and the a new grid is given, the page reloads
+const button = document.querySelector('#grid-size');
+
+button.addEventListener("click", function(e){
+    let gridSize = Number(prompt("Enter the grid size(size x size): "));
+    removeGrid();
+    createGrid(gridSize);
+    toSketch()});
 
 
 function removeGrid(){
@@ -58,9 +54,12 @@ function removeGrid(){
     }
 }
 
-/* createGrid(70);
-toSketch(); */
 
-createGrid(30);
+//empty grid at first 
+// type in the size
+// the page reloads and the new grid pops out(maybe the page doesn't reload just a new grid is drawn)
+//then everytime the button is clicked and the a new grid is given, the page reloads
+
+/* createGrid(10);
 toSketch();
-chooseGrid();
+chooseGrid(); */
