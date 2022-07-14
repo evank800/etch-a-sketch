@@ -1,7 +1,5 @@
 const container = document.querySelector('#container');
 
-//boxNum would be given as an input
-
 //pixNum is the total pixel(here: 960px) / boxNum 
 
 function createGrid(boxNum){
@@ -34,13 +32,35 @@ function toSketch(){
     }))
 }
 
+/* function chooseGrid(){
+    const button = document.querySelector('#grid-size');
+    button.addEventListener("click", () => {let gridSize = prompt("Enter the grid size(size x size): ");
+        return gridSize});
+} */
+
 function chooseGrid(){
     const button = document.querySelector('#grid-size');
-    button.addEventListener("click", () => {let gridSize = prompt("Enter the grid size(max.100): ");
-        return gridSize});
+    button.addEventListener("click", () => {let gridSize = Number(prompt("Enter the grid size(size x size): "));
+        return gridSize})
+    
 }
 
-createGrid(100);
-toSketch()
+
+//empty grid at first 
+// type in the size
+// the page reloads and the new grid pops out(maybe the page doesn't reload just a new grid is drawn)
+//then everytime the button is clicked and the a new grid is given, the page reloads
 
 
+function removeGrid(){
+    while (container.firstChild){
+        container.removeChild(container.firstChild);
+    }
+}
+
+/* createGrid(70);
+toSketch(); */
+
+createGrid(30);
+toSketch();
+chooseGrid();
